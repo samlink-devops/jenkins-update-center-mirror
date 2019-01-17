@@ -1,0 +1,27 @@
+update_center:
+  # Update center to mirror
+  url: http://updates.jenkins.io/stable/update-center.actual.json
+  # CA certificate used to sign the update site
+  ca_cert_path: jenkins-ca-v1.pem
+local_repository:
+  # Url for local repository (you will not benefit from ssl, everything is signed!)
+  url: http://update-center
+  # Path where local copy is stored
+  path: update-center
+  # Key and certificate for signing update site (be sure to create your own)
+  signing:
+    cert_path: keys/local.crt
+    key_path: keys/local.key
+  # Enable core mirroring (not needed, if you install from rpm)
+  core: true
+  # Plugins to mirror (with dependencies)
+  plugins:
+  - name: pipeline-build-step
+  - name: role-strategy
+  - name: ldap
+  - name: git
+  - name: groovy
+  - name: workflow-aggregator
+  - name: workflow-cps-global-lib
+  - name: pipeline-utility-steps
+

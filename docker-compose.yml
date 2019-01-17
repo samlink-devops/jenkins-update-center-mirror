@@ -1,0 +1,13 @@
+version: '3'
+services:
+  update-center:
+    image: "nginx"
+    volumes:
+    - "./update-center:/usr/share/nginx/html:ro"
+  jenkins:
+    image: "jenkins/jenkins:lts"
+    ports:
+    - "8080:8080"
+    volumes:
+    - "./jenkins/hudson.model.UpdateCenter.xml:/var/jenkins_home/hudson.model.UpdateCenter.xml:rw"
+    - "./keys/local.crt:/var/jenkins_home/update-center-rootCAs/local.crt:ro"
