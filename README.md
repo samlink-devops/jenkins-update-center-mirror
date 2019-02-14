@@ -1,4 +1,4 @@
-# jenkins-update-center-copy
+# jenkins-update-center-mirror
 This tool creates a shallow copy of jenkins update center. This tool is inteded for audience that is not able to connect jenkins to internet, but would like use update center for installing plugins
 
 ## Security features
